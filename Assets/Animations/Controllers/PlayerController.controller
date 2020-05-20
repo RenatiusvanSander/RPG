@@ -206,22 +206,22 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -1217569731048266363}
-    m_Position: {x: -150, y: -330, z: 0}
+    m_Position: {x: 1370, y: -1820, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6531278927988355605}
-    m_Position: {x: -150, y: -270, z: 0}
+    m_Position: {x: 1370, y: -1760, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 955841715275739621}
-    m_Position: {x: -150, y: -190, z: 0}
+    m_Position: {x: 1370, y: -1670, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8488653257107429969}
-    m_Position: {x: -150, y: -40, z: 0}
+    m_Position: {x: 1350, y: -1530, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1547541686391612979}
-    m_Position: {x: -570, y: -240, z: 0}
+    m_Position: {x: 950, y: -1730, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2579599492411030158}
-    m_Position: {x: 90, y: -240, z: 0}
+    m_Position: {x: 1610, y: -1730, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -6318490329297357539}
@@ -232,9 +232,9 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: -360, y: -350, z: 0}
-  m_EntryPosition: {x: -420, y: -140, z: 0}
-  m_ExitPosition: {x: 60, y: -160, z: 0}
+  m_AnyStatePosition: {x: 1160, y: -1840, z: 0}
+  m_EntryPosition: {x: 1100, y: -1630, z: 0}
+  m_ExitPosition: {x: 1580, y: -1650, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1547541686391612979}
 --- !u!91 &9100000
@@ -251,7 +251,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
