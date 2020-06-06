@@ -45,6 +45,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\RoundCameraPos.cs" />
      <Compile Include="Assets\Scripts\MovementController.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/home/gamedeveloper/Unity/2019.3.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -577,6 +578,10 @@
       <Project>{e7dabc24-5408-81d0-0d07-d16370d580bc}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Cinemachine.csproj">
+      <Project>{d224e530-bae5-c6f0-ade4-a41f8f072e6a}</Project>
+      <Name>Cinemachine</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{5878e799-2e2a-11a5-9707-23b1e95e7769}</Project>
       <Name>Unity.VSCode.Editor</Name>
@@ -609,6 +614,10 @@
       <Project>{758c05b4-b0ac-44dc-3fbd-1224e6eba9cf}</Project>
       <Name>Unity.2D.Tilemap.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
+      <Project>{2bb27d26-de03-4799-8015-d099802dc889}</Project>
+      <Name>com.unity.cinemachine.editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.csproj">
       <Project>{ac703eb9-81c1-9f1c-7cab-281d5763b9b6}</Project>
       <Name>Unity.TextMeshPro</Name>
@@ -616,14 +625,6 @@
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{bc6c4d72-1e4b-87da-4596-cee4cad2eb8c}</Project>
       <Name>UnityEditor.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Cinemachine.csproj">
-      <Project>{d224e530-bae5-c6f0-ade4-a41f8f072e6a}</Project>
-      <Name>Cinemachine</Name>
-    </ProjectReference>
-    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
-      <Project>{2bb27d26-de03-4799-8015-d099802dc889}</Project>
-      <Name>com.unity.cinemachine.editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
