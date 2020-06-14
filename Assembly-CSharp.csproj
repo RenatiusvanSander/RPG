@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\RoundCameraPos.cs" />
+     <Compile Include="Assets\Scripts\MonoBehaviours\Character.cs" />
      <Compile Include="Assets\Scripts\MovementController.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/home/gamedeveloper/Unity/2019.3.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
