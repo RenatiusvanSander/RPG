@@ -16,7 +16,14 @@ public class Player : Character
     void OnTriggerEnter2D(Collider2D collison) {
         if(collison.gameObject.CompareTag(CAN_BE_PICKED_UP))
         {
+            Item hitObject = collison.gameObject.GetComponent<Consumable>().item;
             collison.gameObject.SetActive(false);
+
+            if(hitObject != null)
+            {
+                print("it: " + hitObject.objectName);
+                collison.gameObject.SetActive(false);
+            }
         }
     }
 }
