@@ -7,6 +7,14 @@ using UnityEngine;
 /// </summary>
 public class Player : Character
 {
+    public HealthBar healthBarPrefab;
+    HealthBar healthBar;
+
+    public void Start() {
+        hitPoints.value = startingHitPoints;
+        healthBar = Instantiate(healthBarPrefab);
+    }
+
     /* tag can be picked up to compare */
     private const string CAN_BE_PICKED_UP = "CanBePickedUp";
 
@@ -21,25 +29,35 @@ public class Player : Character
 
             if(hitObject != null)
             {
-                print("Hit: " + hitObject.objectName);
+                bool shouldDisappear = false;
 
                 switch(hitObject.itemType) {
                     case Item.ItemType.COIN:
+                    shouldDisappear = true;
                     break;
                     case Item.ItemType.HEALTH:
-                    AdjustHitPoints(hitObject.quantity);
+                    shouldDisappear = AdjustHitPoints(hitObject.quantity);
                     break;
                     default:
                     break;
                 }
-                collison.gameObject.SetActive(false);
+
+                if(shouldDisappear) {
+                    collison.gameObject.SetActive(false);
+                }
             }
         }
     }
 
-    public void AdjustHitPoints(int amount) {
-        hitPoints = hitPoints + amount;
-        print("Adjusted hitpoints by: " + amount + ". New value: " + hitPoints);
+    public bool AdjustHitPoints(int amount) {
+        if(hitPoints.value < maxHitPoints) {
+            hitPoints.value = hitPoints.value + amount;
+            
+            print("Adjusted hitpoints by: " + amount + ". New value: " + hitPoints.value);
 
+            return true;
+        }
+        
+        return false;
     }
 }

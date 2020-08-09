@@ -9,8 +9,10 @@ public abstract class Character : MonoBehaviour
 {
     
     /** hit points of a character */
-    public int hitPoints;
+    public HitPoints hitPoints;
 
     /** maximal hit points of a character */
-    public int maxHitPoints;
+    public float maxHitPoints;
+
+    public float startingHitPoints;
 }
