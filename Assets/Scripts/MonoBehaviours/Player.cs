@@ -10,13 +10,14 @@ public class Player : Character
     public HealthBar healthBarPrefab;
     HealthBar healthBar;
 
+/* tag can be picked up to compare */
+    private const string CAN_BE_PICKED_UP = "CanBePickedUp";
+
     public void Start() {
         hitPoints.value = startingHitPoints;
         healthBar = Instantiate(healthBarPrefab);
+        healthBar.character = this;
     }
-
-    /* tag can be picked up to compare */
-    private const string CAN_BE_PICKED_UP = "CanBePickedUp";
 
     /// <summary>
     ///
@@ -25,7 +26,6 @@ public class Player : Character
         if(collison.gameObject.CompareTag(CAN_BE_PICKED_UP))
         {
             Item hitObject = collison.gameObject.GetComponent<Consumable>().item;
-            collison.gameObject.SetActive(false);
 
             if(hitObject != null)
             {

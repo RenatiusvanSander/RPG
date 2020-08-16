@@ -6,7 +6,7 @@ public class HealthBar : MonoBehaviour
     public HitPoints hitPoints;
 
     [HideInInspector]
-    public Character character;
+    public Player character;
 
     public Image meterImage;
 
