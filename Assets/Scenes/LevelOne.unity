@@ -6860,7 +6860,7 @@ PrefabInstance:
     - target: {fileID: 876147410642452713, guid: 3040ccbef7df3493aaa4c92436e3bdd8,
         type: 3}
       propertyPath: m_Name
-      value: HeartObject (1)
+      value: HeartObject2
       objectReference: {fileID: 0}
     - target: {fileID: 6191625357207898445, guid: 3040ccbef7df3493aaa4c92436e3bdd8,
         type: 3}
@@ -10479,6 +10479,12 @@ PrefabInstance:
       propertyPath: healthBarPrefab
       value: 
       objectReference: {fileID: 5874519439019937847, guid: 115a078f9115684b3857a8d1a35b9ec7,
+        type: 3}
+    - target: {fileID: 7648385557755401833, guid: 29ee0db5a2bfc2e3caccc61dec78b34a,
+        type: 3}
+      propertyPath: inventoryPrefab
+      value: 
+      objectReference: {fileID: 7478439293741707339, guid: 864dbcf40dfe0f55081b871e74464c56,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29ee0db5a2bfc2e3caccc61dec78b34a, type: 3}

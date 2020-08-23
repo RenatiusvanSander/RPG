@@ -7,57 +7,59 @@ using UnityEngine;
 /// </summary>
 public class Player : Character
 {
+    public Inventory inventoryPrefab;
+    Inventory inventory;
+
     public HealthBar healthBarPrefab;
     HealthBar healthBar;
 
-/* tag can be picked up to compare */
-    private const string CAN_BE_PICKED_UP = "CanBePickedUp";
-
-    public void Start() {
+    public void Start()
+	{
         hitPoints.value = startingHitPoints;
+        inventory = Instantiate(inventoryPrefab);
         healthBar = Instantiate(healthBarPrefab);
         healthBar.character = this;
-    }
+	}
 
-    /// <summary>
-    ///
-    ///</summary>
-    void OnTriggerEnter2D(Collider2D collison) {
-        if(collison.gameObject.CompareTag(CAN_BE_PICKED_UP))
+	void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("CanBePickedUp"))
         {
-            Item hitObject = collison.gameObject.GetComponent<Consumable>().item;
+            Item hitObject = collision.gameObject.GetComponent<Consumable>().item;
 
-            if(hitObject != null)
+            if (hitObject != null)
             {
                 bool shouldDisappear = false;
 
-                switch(hitObject.itemType) {
+                switch (hitObject.itemType)
+                {
                     case Item.ItemType.COIN:
-                    shouldDisappear = true;
-                    break;
+                        shouldDisappear = inventory.AddItem(hitObject);
+                        break;
                     case Item.ItemType.HEALTH:
-                    shouldDisappear = AdjustHitPoints(hitObject.quantity);
-                    break;
+                        shouldDisappear = AdjustHitPoints(hitObject.quantity);
+                        break;
                     default:
-                    break;
+                        break;
                 }
 
-                if(shouldDisappear) {
-                    collison.gameObject.SetActive(false);
+                if (shouldDisappear)
+                {
+                    collision.gameObject.SetActive(false);
                 }
             }
         }
     }
 
-    public bool AdjustHitPoints(int amount) {
-        if(hitPoints.value < maxHitPoints) {
+    public bool AdjustHitPoints(int amount)
+    {
+        if (hitPoints.value < maxHitPoints)
+        {
             hitPoints.value = hitPoints.value + amount;
-            
-            print("Adjusted hitpoints by: " + amount + ". New value: " + hitPoints.value);
-
+            print("Adjusted HP by: " + amount + ". New value: " + hitPoints.value);
             return true;
         }
-        
+        print("didnt adjust hitpoints");
         return false;
     }
 }
